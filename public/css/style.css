@@ -1,0 +1,15 @@
+p{
+    padding:10px;
+}
+body  {
+    background-image: url("../res/833.jpg");
+    background-color: #cccccc;
+    font-family: Courier;
+    color: #BA3434;
+}
+footer{
+    clear: both;
+    margin: 20px;
+    font-family: arial, helvetica;
+    font-size: 8px;
+}
