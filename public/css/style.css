@@ -13,3 +13,15 @@ footer{
     font-family: arial, helvetica;
     font-size: 8px;
 }
+
+#backbutton {
+    position: fixed;
+    left: 10px;
+    font-size: medium;
+}
+
+#homebutton {
+    position: fixed;
+    right: 10px;
+    font-size: medium;
+}
