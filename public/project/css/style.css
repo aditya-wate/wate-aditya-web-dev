@@ -7,6 +7,10 @@ body {
     padding-bottom: 56px;
 }
 
-.navbar-text.pull-right{
-    padding-right: 20px;
+span.glyphicon {
+    margin-right: 15px;
+}
+
+span.glyphicon.glyphicon-user {
+    margin-right: 5px;
 }
