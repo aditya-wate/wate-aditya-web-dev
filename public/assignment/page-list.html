@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Website</title>
+    <title>Pages</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
 </head>
@@ -17,46 +17,51 @@
                 </a>
             </p>
             <a class="navbar-brand"
-               href="website-edit.html">
-                Edit Website
+               href="page-list.html">
+                Pages
             </a>
             <p class="navbar-text pull-right">
-                <a href="page-list.html"
+                <a href="page-new.html"
                    class="navbar-link">
-                    <span class="glyphicon glyphicon-ok"></span>
+          <span class="glyphicon glyphicon-plus">
+          </span>
                 </a>
             </p>
         </div>
     </div>
 </nav>
 <div class="container">
-    <form>
-        <div class="form-group">
-            <label for="app-name">Application Name</label>
-            <input type="text"
-                   class="form-control"
-                   id="app-name"
-                   placeholder="Blogger">
-
-            <label for="app-description">Application Description</label>
-            <textarea class="form-control"
-                      id="app-description"
-                      placeholder="Blog publishing service."
-                      rows="4"></textarea>
-        </div>
-        <a class="btn btn-danger btn-block"
-           href="website-list.html">Delete</a>
-    </form>
+    <ul class="nav nav-stacked">
+        <li role="presentation">
+            <a href="page-edit.html">Blog Post
+                <span class="glyphicon glyphicon-cog pull-right"/>
+            </a>
+            </p>
+        </li>
+        <li role="presentation">
+            <a href="page-edit.html">Blogs
+                <span class="glyphicon glyphicon-cog pull-right"/>
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="page-edit.html">Home
+                <span class="glyphicon glyphicon-cog pull-right"/>
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="page-edit.html">About
+                <span class="glyphicon glyphicon-cog pull-right"/>
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="page-edit.html">Contact Us
+                <span class="glyphicon glyphicon-cog pull-right"/>
+            </a>
+        </li>
+    </ul>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
-        <div class="row navbar-text pull-left">
-            <div class="col-xs-3 text-left">
-                <a href="profile.html">
-                    <span class="glyphicon glyphicon-share-alt"></span>
-                </a>
-            </div>
-        </div>
         <div class="row navbar-text pull-right">
             <div class="col-xs-3 text-right">
                 <a href="profile.html">
@@ -66,5 +71,7 @@
         </div>
     </div>
 </nav>
+
+
 </body>
 </html>

@@ -4,8 +4,6 @@ p{
 body  {
     background-image: url("../res/833.jpg");
     background-color: #cccccc;
-    font-family: Courier;
-    color: #BA3434;
 }
 footer{
     clear: both;
@@ -24,4 +22,11 @@ footer{
     position: fixed;
     right: 10px;
     font-size: medium;
+}
+
+#my-pic {
+    margin: 10px;
+    float: left;
+    width: 130px;
+    height: 140px;
 }
