@@ -5,7 +5,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="initial-scale=1.25, user-scalable = no">
-    <title>Header Widget</title>
+    <title>Image Widget</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/assignment/css/style.css" rel="stylesheet"/>
 </head>
@@ -45,23 +45,35 @@
                    placeholder="Name">
         </div>
         <div class="form-group">
-            <label for="heading-text">Text</label>
+            <label for="widget-text">Text</label>
             <input type="text"
                    class="form-control"
-                   id="heading-text"
-                   value="Published personal data on 70,000 OkCupid users taken down after DMCA order"
-                   placeholder="Heading Text">
+                   id="widget-text"
+                   placeholder="Text">
         </div>
         <div class="form-group">
-            <label for="heading-size">Size</label>
+            <label for="image-url">URL</label>
             <input type="text"
                    class="form-control"
-                   id="heading-size"
-                   value="3"
-                   placeholder="Heading Size">
+                   id="image-url"
+                   value="https://octodex.github.com/images/privateinvestocat.jpg"
+                   placeholder="Image URL">
+        </div>
+        <div class="form-group">
+            <label for="image-size">Width</label>
+            <input type="text"
+                   class="form-control"
+                   id="image-size"
+                   value="100%"
+                   placeholder="Width %">
+        </div>
+        <div class="form-group">
+            <label for="image-upload">Upload</label>
+            <input type="file" id="image-upload">
         </div>
     </form>
-
+    <a class="btn btn-primary  btn-block"
+       href="widget-chooser.html">Upload Image</a>
     <a class="btn btn-danger  btn-block"
        href="widget-chooser.html">Delete</a>
 </div>
