@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.25, user-scalable = no">
     <meta charset="UTF-8">
-    <title>Edit Website</title>
+    <title>New Website</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
+    <link href="/assignment/css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="website-list.html"
+                <a href="/assignment/website/website-list.html"
                    class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left"/>
                 </a>
             </p>
-            <a class="navbar-brand"
-               href="website-edit.html">
-                Edit Website
+            <a class="navbar-brand" href="website-new.html">
+                New Website
             </a>
             <p class="navbar-text pull-right">
-                <a href="page-list.html"
+                <a href="/assignment/page/page-list.html"
                    class="navbar-link">
-                    <span class="glyphicon glyphicon-ok"></span>
+                    <span class="glyphicon glyphicon-ok"/>
                 </a>
             </p>
         </div>
@@ -32,39 +34,32 @@
 <div class="container">
     <form>
         <div class="form-group">
-            <label for="app-name">Application Name</label>
+            <label for="name">Name</label>
             <input type="text"
                    class="form-control"
-                   id="app-name"
-                   placeholder="Blogger">
-
-            <label for="app-description">Application Description</label>
-            <textarea class="form-control"
-                      id="app-description"
-                      placeholder="Blog publishing service."
-                      rows="4"></textarea>
+                   id="name"
+                   placeholder="Name">
         </div>
-        <a class="btn btn-danger btn-block"
-           href="website-list.html">Delete</a>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text"
+                   class="form-control"
+                   id="description"
+                   placeholder="Description">
+        </div>
     </form>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
-        <div class="row navbar-text pull-left">
-            <div class="col-xs-3 text-left">
-                <a href="profile.html">
-                    <span class="glyphicon glyphicon-share-alt"></span>
-                </a>
-            </div>
-        </div>
         <div class="row navbar-text pull-right">
             <div class="col-xs-3 text-right">
-                <a href="profile.html">
+                <a href="../user/profile.html">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
         </div>
     </div>
 </nav>
+
 </body>
 </html>
