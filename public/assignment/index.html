@@ -1,35 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WebAppMaker">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.25, user-scalable = no">
+    <title>WAM</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <title>Assignment Home Page</title>
+    <link href="/assignment/css/style.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="views/user/login.controller.client.js"></script>
+    <script src="views/user/profile.controller.client.js"></script>
+    <script src="views/website/website-list.controller.client.js"></script>
+    <script src="views/website/website-new.controller.client.js"></script>
+    <script src="views/website/website-edit.controller.client.js"></script>
+    <script src="views/widget/widget-list.controller.client.js"></script>
+    <script src="services/user.service.client.js"></script>
+    <script src="services/website.service.client.js"></script>
+    <script src="services/widget.service.client.js"></script>
 </head>
 <body>
-<div class="page-header">
-    <h2>Assignment Home Page</h2>
-</div>
-<div class="container">
-    <table class="table table-bordered table-hover table-responsive">
-        <tr>
-            <th>Assignment</th>
-            <th>Release/Tag</th>
-        </tr>
-        <tr>
-            <td>Assignment 1</td>
-            <td><a href="https://github.com/aditya-wate/wate-aditya-web-dev/releases/tag/assignment1.1">assignment1</a></td>
-        </tr>
-        <tr>
-            <td>Assignment 2</td>
-            <td><a href="https://github.com/aditya-wate/wate-aditya-web-dev/releases/tag/assignment2">assignment2</a></td>
-        </tr>
-    </table>
-</div>
-<a class="glyphicon glyphicon-home" href="/" role="button" id="homebutton">Home</a>
-<a class="glyphicon glyphicon-arrow-left" type="button" onclick="history.go(-1)" role="button" id="backbutton">Back</a>
-<footer >
-    <a href='http://www.freepik.com/free-vector/hexagonal-pattern_852781.htm'>Background Designed by Freepik</a>
-</footer>
+    <div ng-view></div>
 </body>
 </html>
