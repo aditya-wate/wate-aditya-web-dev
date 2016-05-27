@@ -20,8 +20,24 @@
         };
         return api;
 
-        function createUser(newUser) {}
-        function deleteUser(userId) {}
+        function createUser(newUser) {
+            var user = {
+                _id: (new Date()).getTime()+"",
+                username: newUser.username,
+                password: newUser.password
+            };
+            users.push(user);
+            return user;
+        }
+        function deleteUser(userId) {
+            for(var i in users) {
+                if(users[i]._id === id) {
+                    users.splice(i, 1);
+                    return true;
+                }
+            }
+            return false;
+        }
         function updateUser(id, newUser) {
             for(var i in users) {
                 if(users[i]._id === id) {
