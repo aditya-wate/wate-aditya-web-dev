@@ -13,6 +13,7 @@
     function UserService() {
         var api = {
             createUser: createUser,
+            findUserByUsername: findUserByUsername,
             findUserByUsernameAndPassword: findUserByUsernameAndPassword,
             findUserById: findUserById,
             updateUser: updateUser,
@@ -66,5 +67,15 @@
             }
             return null;
         }
+
+        function findUserByUsername(username) {
+            for(var i in users) {
+                if(users[i].username === username) {
+                    return users[i];
+                }
+            }
+            return null;
+        }
+
     }
 })();
