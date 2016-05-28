@@ -1,0 +1,91 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <p class="navbar-text pull-left">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget"
+                   class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"/>
+                </a>
+            </p>
+            <a class="navbar-brand"
+               href="#">
+                Choose Widget
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='HEADER'"
+               ng-click="model.createWidget(model.widget)">
+                Header
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='LABEL'"
+               ng-click="model.createWidget(model.widget)">
+                Label
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='HTML'"
+               ng-click="model.createWidget(model.widget)">
+                HTML
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='TEXT'"
+               ng-click="model.createWidget(model.widget)">
+                Text Input
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='LINK'"
+               ng-click="model.createWidget(model.widget)">
+                Link
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='BUTTON'"
+               ng-click="model.createWidget(model.widget)">
+                Button
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='IMAGE'"
+               ng-click="model.createWidget(model.widget)">
+                Image
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='YOUTUBE'"
+               ng-click="model.createWidget(model.widget)">
+                YouTube
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='TABLE'"
+               ng-click="model.createWidget(model.widget)">
+                Data Table
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-init="model.widget.widgetType='REPEATER'"
+               ng-click="model.createWidget(model.widget)">
+                Repeater
+            </a>
+        </li>
+    </ul>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text pull-right">
+            <div class="col-xs-3 text-right">
+                <a href="#/user/{{model.userId}}">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
