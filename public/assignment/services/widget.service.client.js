@@ -32,7 +32,7 @@
                 pageId: pageId,
                 text: widget.text
             };
-            pages.push(newWidget);
+            widgets.push(newWidget);
             return newWidget;
         }
 
@@ -53,7 +53,7 @@
                     widget = widgets[i];
                 }
             }
-            return page;
+            return widget;
         }
 
         function updateWidget(widgetId, widget) {
