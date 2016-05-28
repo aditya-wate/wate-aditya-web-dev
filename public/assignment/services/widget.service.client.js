@@ -17,12 +17,64 @@
 
     function WidgetService() {
         var api = {
-            findWidgetsForPageId: findWidgetsForPageId
+            createWidget: createWidget,
+            findWidgetsByPageId: findWidgetsByPageId,
+            findWidgetById: findWidgetById,
+            updateWidget: updateWidget,
+            deleteWidget: deleteWidget
         };
         return api;
-        
-        function findWidgetsForPageId(pageId) {
-            return widgets;
+
+        function createWidget(pageId, widget) {
+            var newWidget = {
+                _id: (new Date()).getTime()+"",
+                widgetType: widget.widgetType,
+                pageId: pageId,
+                text: widget.text
+            };
+            pages.push(newWidget);
+            return newWidget;
+        }
+
+        function findWidgetsByPageId(pageId) {
+            var resultSet = [];
+            for(var i in widgets) {
+                if(widgets[i].pageId === pageId) {
+                    resultSet.push(widgets[i]);
+                }
+            }
+            return resultSet;
+        }
+
+        function findWidgetById(widgetId) {
+            var widget;
+            for(var i in widgets) {
+                if(widgets[i]._id === widgetId) {
+                    widget = widgets[i];
+                }
+            }
+            return page;
+        }
+
+        function updateWidget(widgetId, widget) {
+            for(var i in widgets) {
+                if(widgets[i]._id === widgetId) {
+                    widgets[i].widgetType = widget.widgetType;
+                    widgets[i].text = widget.text;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function deleteWidget(widgetId) {
+            for(var i in widgets) {
+                if(widgets[i]._id === widgetId) {
+                    widgets.splice(i, 1);
+                    return true;
+                }
+            }
+            return false;
         }
     }
 })();
