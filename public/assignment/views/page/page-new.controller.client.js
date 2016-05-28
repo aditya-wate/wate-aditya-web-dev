@@ -12,7 +12,7 @@
         function createPage(page) {
             var newPage = PageService.createPage(vm.websiteId, page);
             if(newPage) {
-                $location.url("/user/"+vm.userId+"/website/"+vm.userId+"/page");
+                $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page");
             } else {
                 vm.error = "Unable to create page";
             }
