@@ -25,12 +25,11 @@
         };
         return api;
 
-        function createWidget(pageId, widget) {
+        function createWidget(pageId, widgetType) {
             var newWidget = {
                 _id: (new Date()).getTime()+"",
-                widgetType: widget.widgetType,
-                pageId: pageId,
-                text: widget.text
+                widgetType: widgetType,
+                pageId: pageId
             };
             widgets.push(newWidget);
             return newWidget;
@@ -61,6 +60,9 @@
                 if(widgets[i]._id === widgetId) {
                     widgets[i].widgetType = widget.widgetType;
                     widgets[i].text = widget.text;
+                    widgets[i].size = widget.size;
+                    widgets[i].url = widget.url;
+                    widgets[i].width = widget.width;
                     return true;
                 }
             }

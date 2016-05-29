@@ -1,0 +1,49 @@
+<div class="container">
+
+    <form>
+        <div class="form-group">
+            <label for="widget-name">Name</label>
+            <input ng-model="model.widget.name"
+                   type="text"
+                   class="form-control"
+                   id="widget-name"
+                   placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="widget-text">Text</label>
+            <input ng-model="model.widget.text"
+                   type="text"
+                   class="form-control"
+                   id="widget-text"
+                   placeholder="Text">
+        </div>
+        <div class="form-group">
+            <label for="image-url">URL</label>
+            <input ng-model="model.widget.url"
+                   type="text"
+                   class="form-control"
+                   id="image-url"
+                   value="https://octodex.github.com/images/privateinvestocat.jpg"
+                   placeholder="Image URL">
+        </div>
+        <div class="form-group">
+            <label for="image-size">Width</label>
+            <input ng-model="model.widget.width"
+                   type="text"
+                   class="form-control"
+                   id="image-size"
+                   value="100%"
+                   placeholder="Width %">
+        </div>
+        <div class="form-group">
+            <label for="image-upload">Upload</label>
+            <input ng-model="model.widget.file"
+                   type="file"
+                   id="image-upload">
+        </div>
+    </form>
+    <a class="btn btn-primary  btn-block"
+       href="widget-chooser.html">Upload Image</a>
+    <a class="btn btn-danger  btn-block"
+       ng-click="model.deleteWidget(model.widgetId)">Delete</a>
+</div>

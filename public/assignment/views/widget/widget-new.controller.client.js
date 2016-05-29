@@ -10,8 +10,8 @@
         vm.pageId = $routeParams.pageId;
         vm.createWidget = createWidget;
 
-        function createWidget(widget) {
-            var newWidget = WidgetService.createWidget(vm.pageId, widget);
+        function createWidget(widgetType) {
+            var newWidget = WidgetService.createWidget(vm.pageId, widgetType);
             if(newWidget) {
                 $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget/"+newWidget._id);
             } else {
