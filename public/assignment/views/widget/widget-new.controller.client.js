@@ -11,12 +11,19 @@
         vm.createWidget = createWidget;
 
         function createWidget(widgetType) {
-            var newWidget = WidgetService.createWidget(vm.pageId, widgetType);
-            if(newWidget) {
-                $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget/"+newWidget._id);
-            } else {
-                vm.error = "Unable to create widget";
-            }
+            WidgetService
+                .createWidget(vm.pageId, widgetType)
+                .then(
+                    function(response){
+                        var newWidget = response.data;
+                        if (newWidget._id) {
+                            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/" + newWidget._id);
+                        }
+                    },
+                    function (error) {
+                        vm.error = "Unable to create widget";
+                    });
+
         }
     }
 })();
