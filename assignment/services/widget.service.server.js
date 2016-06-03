@@ -20,10 +20,10 @@ module.exports = function(app) {
 
     function createWidget(req, res){
         var pageId = req.params.pageId;
-        var widgetType = req.body;
+        var widget = req.body;
         var newWidget = {
             _id: (new Date()).getTime()+"",
-            widgetType: widgetType,
+            widgetType: widget.widgetType,
             pageId: pageId
         };
         widgets.push(newWidget);
