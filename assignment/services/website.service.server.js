@@ -21,7 +21,7 @@ module.exports = function(app) {
         var newWebsite = {
             _id: (new Date()).getTime()+"",
             name: website.name,
-            description: website.desc,
+            description: website.description,
             developerId: userId
         };
         websites.push(newWebsite);
@@ -59,11 +59,12 @@ module.exports = function(app) {
                 websites[i].name = website.name;
                 websites[i].description = website.description;
                 res.send(200);
+                return;
             }
         }
         res.send(400);
     }
-    
+
     function deleteWebsite(req, res){
         var id = req.params.websiteId;
         for(var i in websites) {

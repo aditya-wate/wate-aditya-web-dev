@@ -11,24 +11,35 @@
         vm.updateWebsite = updateWebsite;
 
         function init() {
-            vm.website = WebsiteService.findWebsiteById(vm.websiteId);
+            WebsiteService
+                .findWebsiteById(vm.websiteId)
+                .then(function (response) {
+                    vm.website = response.data;
+                });
         }
         init();
+
         function updateWebsite(websiteId, website) {
-            var result = WebsiteService.updateWebsite(websiteId, website);
-            if(result) {
-                $location.url("/user/"+vm.userId+"/website");
-            } else {
-                vm.error = "Unable to update website";
-            }
+            WebsiteService
+                .updateWebsite(websiteId, website)
+                .then(function (response) {
+                        $location.url("/user/"+vm.userId+"/website");
+                    },
+                    function (error) {
+                        vm.error = "Unable to update website";
+                    });
         }
+
         function deleteWebsite(websiteId) {
-            var result = WebsiteService.deleteWebsite(websiteId);
-            if(result) {
-                $location.url("/user/"+vm.userId+"/website");
-            } else {
-                vm.error = "Unable to delete website";
-            }
+            WebsiteService
+                .deleteWebsite(websiteId)
+                .then(function (response) {
+                        $location.url("/user/"+vm.userId+"/website");
+
+                    },
+                    function (error) {
+                        vm.error = "Unable to delete website";
+                    });
         }
     }
 })();
