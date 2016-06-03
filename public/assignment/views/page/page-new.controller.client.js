@@ -10,12 +10,17 @@
         vm.createPage = createPage;
 
         function createPage(page) {
-            var newPage = PageService.createPage(vm.websiteId, page);
-            if(newPage) {
-                $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page");
-            } else {
-                vm.error = "Unable to create page";
-            }
+            PageService
+                .createPage(vm.websiteId, page)
+                .then(function (response) {
+                        var newPage = response.data;
+                        if (newPage._id) {
+                            $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page");
+                        }
+                    },
+                    function (error) {
+                        vm.error = "Unable to create page";
+                    });
         }
     }
 })();
