@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController($routeParams, UserService) {
+    function ProfileController($location, $routeParams, UserService) {
         var vm = this;
         vm.updateUser = updateUser;
         vm.unregister = unregister;
@@ -20,18 +20,6 @@
         }
         init();
 
-        // function updateUser(newUser) {
-        //     userUpdated = UserService.updateUser(id, newUser);
-        //
-        //     if(userUpdated){
-        //         vm.alertType = "Success";
-        //         vm.alert = "Your profile was saved.";
-        //     }
-        //     else{
-        //         vm.alertType = "Failure";
-        //         vm.alert = "Profile was not updated.";
-        //     }
-        // }
 
         function updateUser(newUser) {
             UserService
