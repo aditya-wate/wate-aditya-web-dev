@@ -18,7 +18,6 @@
             var url = "/api/website/"+websiteId+"/page";
 
             var newPage = {
-                _id: (new Date()).getTime()+"",
                 name: page.name,
                 title: page.title,
                 websiteId: websiteId
