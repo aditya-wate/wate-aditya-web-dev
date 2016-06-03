@@ -23,47 +23,23 @@
         }
 
         function findWidgetsByPageId(pageId) {
-            var resultSet = [];
-            for(var i in widgets) {
-                if(widgets[i].pageId === pageId) {
-                    resultSet.push(widgets[i]);
-                }
-            }
-            return resultSet;
+            var url = "/api/page/"+pageId+"/widget";
+            return $http.get(url);
         }
 
         function findWidgetById(widgetId) {
-            var widget;
-            for(var i in widgets) {
-                if(widgets[i]._id === widgetId) {
-                    widget = widgets[i];
-                }
-            }
-            return widget;
+            var url = "/api/widget/"+widgetId;
+            return $http.get(url);
         }
 
         function updateWidget(widgetId, widget) {
-            for(var i in widgets) {
-                if(widgets[i]._id === widgetId) {
-                    widgets[i].widgetType = widget.widgetType;
-                    widgets[i].text = widget.text;
-                    widgets[i].size = widget.size;
-                    widgets[i].url = widget.url;
-                    widgets[i].width = widget.width;
-                    return true;
-                }
-            }
-            return false;
+            var url = "/api/widget/"+widgetId;
+            return $http.put(url, widget);
         }
 
         function deleteWidget(widgetId) {
-            for(var i in widgets) {
-                if(widgets[i]._id === widgetId) {
-                    widgets.splice(i, 1);
-                    return true;
-                }
-            }
-            return false;
+            var url = "/api/widget/"+widgetId;
+            return $http.delete(url);
         }
     }
 })();
