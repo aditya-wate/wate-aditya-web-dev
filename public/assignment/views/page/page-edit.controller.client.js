@@ -23,7 +23,8 @@
         function updatePage(pageId, page) {
             PageService
                 .updatePage(pageId, page)
-                .then(function (response) {
+                .then(
+                    function (response) {
                         $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page");
                     },
                     function (error) {
@@ -34,7 +35,8 @@
         function deletePage(pageId) {
             PageService
                 .deletePage(pageId)
-                .then(function (response) {
+                .then(
+                    function (response) {
                         $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page");
 
                     },

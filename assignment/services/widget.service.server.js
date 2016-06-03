@@ -59,6 +59,7 @@ module.exports = function(app) {
         for(var i in widgets) {
             if(widgets[i]._id === id) {
                 widgets[i].widgetType = widget.widgetType;
+                widgets[i].name = widget.name;
                 widgets[i].text = widget.text;
                 widgets[i].size = widget.size;
                 widgets[i].url = widget.url;
@@ -71,7 +72,7 @@ module.exports = function(app) {
     }
 
     function deleteWidget(req, res){
-        var id = req.params.websiteId;
+        var id = req.params.widgetId;
         for(var i in widgets) {
             if (widgets[i]._id === id) {
                 widgets.splice(i, 1);
