@@ -2,7 +2,7 @@
     angular
         .module("WebAppMaker")
         .controller("FlickrImageSearchController", FlickrImageSearchController);
-    
+
     function FlickrImageSearchController($routeParams, $location, FlickrService, WidgetService) {
         var vm = this;
         vm.userId = $routeParams.userId;
@@ -16,12 +16,16 @@
         function searchPhotos(searchText) {
             FlickrService
                 .searchPhotos(searchText)
-                .then(function(response){
-                    data = response.data.replace("jsonFlickrApi(","");
-                    data = data.substring(0,data.length - 1);
-                    data = JSON.parse(data);
-                    vm.photos = data.photos;
-                });
+                .then(
+                    function(response){
+                        data = response.data.replace("jsonFlickrApi(","");
+                        data = data.substring(0,data.length - 1);
+                        data = JSON.parse(data);
+                        vm.photos = data.photos;
+                    },
+                    function (error) {
+                        vm.error = error;
+                    });
         }
 
         function selectPhoto(photo) {

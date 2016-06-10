@@ -14,9 +14,13 @@
         function init() {
             WidgetService
                 .findWidgetsByPageId(vm.pageId)
-                .then(function (response) {
-                    vm.widgets = response.data;
-                });
+                .then(
+                    function (response) {
+                        vm.widgets = response.data;
+                    },
+                    function (error) {
+                        vm.error = "Unable to find widgets for page:"+ vm.pageId;
+                    });
             $(".container")
                 .sortable({axis: "y"});
         }

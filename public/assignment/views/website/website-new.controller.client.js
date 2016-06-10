@@ -11,7 +11,8 @@
         function createWebsite(name, description) {
             WebsiteService
                 .createWebsite(vm.userId, name, description)
-                .then(function (response) {
+                .then(
+                    function (response) {
                         var newWebsite = response.data;
                         if (newWebsite._id) {
                             $location.url("/user/" +vm.userId+"/website");

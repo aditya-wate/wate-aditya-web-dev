@@ -14,9 +14,13 @@
         function init() {
             UserService
                 .findUserById(id)
-                .then(function(response){
-                    vm.user = response.data;
-                });
+                .then(
+                    function(response){
+                        vm.user = response.data;
+                    },
+                    function (error) {
+                        vm.error = "Error getting user for userId:"+id;
+                    });
         }
         init();
 
@@ -29,7 +33,7 @@
                         vm.success = "Updated successfully";
                     },
                     function(error) {
-                        vm.error = "Unable to update user"
+                        vm.error = "Unable to update user:" + id;
                     }
                 );
         }

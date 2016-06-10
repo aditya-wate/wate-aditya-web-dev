@@ -11,9 +11,13 @@
         function init() {
             PageService
                 .findPageByWebsiteId(vm.websiteId)
-                .then(function (response) {
-                    vm.pages = response.data;
-                });
+                .then(
+                    function (response) {
+                        vm.pages = response.data;
+                    },
+                    function (error) {
+                        vm.error = "Unable to find page for" + vm.websiteId;
+                    });
         }
         init();
     }

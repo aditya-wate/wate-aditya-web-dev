@@ -10,9 +10,13 @@
         function init() {
             WebsiteService
                 .findWebsitesByUser(vm.userId)
-                .then(function(response){
-                    vm.websites = response.data;
-                });
+                .then(
+                    function(response){
+                        vm.websites = response.data;
+                    },
+                    function (error) {
+                        vm.error = "Unable to find website for user";
+                    });
         }
         init();
     }

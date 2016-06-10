@@ -19,15 +19,18 @@
                     }
                     else
                     {
-                        console.log("here5");
                         UserService
                             .createUser(newUser)
-                            .then(function (response) {
-                                var user = response.data;
-                                if (user) {
-                                    $location.url("/user/" + user._id);
-                                }
-                            });
+                            .then(
+                                function (response) {
+                                    var user = response.data;
+                                    if (user) {
+                                        $location.url("/user/" + user._id);
+                                    }
+                                },
+                                function (error) {
+                                    vm.error = "Unable to create user";
+                                });
                     }
                 });
 
