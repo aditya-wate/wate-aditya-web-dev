@@ -12,7 +12,7 @@
                 .findUserByUsername(newUser.username)
                 .then(function (response) {
                     var user = response.data;
-                    if (user.username){
+                    if (user){
                         vm.error = "User already exists by this Username";
                     } else if(newUser.password != newUser.repassword) {
                         vm.error = "Password Mismatch";
