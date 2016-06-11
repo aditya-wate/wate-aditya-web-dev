@@ -20,7 +20,6 @@
             var newWebsite = {
                 name: name,
                 description: desc,
-                developerId: developerId
             };
 
             return $http.post(url, newWebsite);
