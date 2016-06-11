@@ -1,11 +1,6 @@
 module.exports = function(app, models) {
 
     var pageModel = models.pageModel;
-    // var pages = [
-    //     { "_id": "321", "name": "Post 1", "websiteId": "456" },
-    //     { "_id": "432", "name": "Post 2", "websiteId": "456" },
-    //     { "_id": "543", "name": "Post 3", "websiteId": "456" }
-    // ]
 
     app.post("/api/website/:websiteId/page", createPage);
     app.get("/api/website/:websiteId/page", findAllPagesForWebsite);
@@ -33,8 +28,6 @@ module.exports = function(app, models) {
                     res.statusCode(400).send(error);
                 }
             );
-        // pages.push(newPage);
-        // res.json(newPage);
     }
 
     function findAllPagesForWebsite(req, res){
@@ -49,13 +42,6 @@ module.exports = function(app, models) {
                     res.statusCode(404).send(error);
                 }
             );
-        // var result = [];
-        // for(var i in pages) {
-        //     if(pages[i].websiteId === websiteId) {
-        //         result.push(pages[i]);
-        //     }
-        // }
-        // res.json(result);
     }
 
     function findPageById(req, res){
@@ -70,13 +56,6 @@ module.exports = function(app, models) {
                     res.statusCode(404).send(error);
                 }
             );
-        // for(var i in pages) {
-        //     if(pages[i]._id === pageId) {
-        //         res.json(pages[i]);
-        //         return;
-        //     }
-        // }
-        // res.json({});
     }
 
     function updatePage(req, res){
@@ -93,15 +72,6 @@ module.exports = function(app, models) {
                     res.statusCode(404).send(error);
                 }
             );
-        // for(var i in pages) {
-        //     if(pages[i]._id === id) {
-        //         pages[i].name = page.name;
-        //         pages[i].title = page.title;
-        //         res.send(200);
-        //         return;
-        //     }
-        // }
-        // res.send(400);
     }
 
     function deletePage(req, res){
@@ -117,13 +87,5 @@ module.exports = function(app, models) {
                     res.statusCode(404).send(error);
                 }
             );
-        // for(var i in pages) {
-        //     if (pages[i]._id === id) {
-        //         pages.splice(i, 1);
-        //         res.send(200);
-        //         return;
-        //     }
-        // }
-        // res.send(400);
     }
 };
