@@ -32,7 +32,7 @@ module.exports = function() {
                 default: Date.now
             }
         },
-        {collection: "assignment.page"}
+        {collection: "assignment.widget"}
     );
 
     return Widget;
