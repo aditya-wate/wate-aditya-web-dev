@@ -136,6 +136,7 @@ module.exports = function(app, models) {
         var pageId = req.params.pageId;
         var start = parseInt(req.query.start);
         var end = parseInt(req.query.end);
+        //TODO: remove the below
         console.log("pageId:"+pageId+" start:"+start+" end:"+end);
 
         // return Todo.find(function(err, todos){
