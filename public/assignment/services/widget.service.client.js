@@ -16,8 +16,8 @@
         function createWidget(pageId, widgetType) {
             var url = "/api/page/"+pageId+"/widget";
             var newWidget = {
-                widgetType: widgetType,
-                pageId: pageId
+                type: widgetType,
+                _page: pageId
             };
             return $http.post(url, newWidget);
         }
