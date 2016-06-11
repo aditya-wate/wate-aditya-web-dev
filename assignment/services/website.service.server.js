@@ -1,6 +1,7 @@
 module.exports = function(app, models) {
 
     var websiteModel = models.websiteModel;
+    var userModel = models.userModel;
 
     app.post("/api/user/:userId/website", createWebsite);
     app.get("/api/user/:userId/website", findAllWebsitesForUser);
@@ -88,6 +89,34 @@ module.exports = function(app, models) {
                     res.statusCode(404).send(error);
                 }
             );
-        
+
+    }
+
+    //functions required to update referencing user
+
+    function findUserById(id) {
+        userModel
+            .findUserById(id)
+            .then(
+                function(user) {
+                    return(user);
+                },
+                function(error) {
+                    return(error);
+                }
+            );
+    }
+
+    function updateUser(id, user) {
+        userModel
+            .updateUser(id, user)
+            .then(
+                function(stats) {
+                    return true;
+                },
+                function(error) {
+                    return error;
+                }
+            );
     }
 };

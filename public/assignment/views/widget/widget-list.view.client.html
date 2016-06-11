@@ -23,8 +23,12 @@
 </nav>
 
 
-<div class="container">
-
+<div class="container" wam-sortable wam-callback="model.reorderWidget(start, end)">
+    <!--wam-sortable widgets="model.widgets"
+                  userId="model.userId"
+                  websiteId="model.websiteId"
+                  pageId="model.pageId"
+                  wamCallback="model.reorderWidget(start, end)"></wam-sortable-->
     <div ng-repeat="widget in model.widgets"
          class="jga-widget">
         <div class="jga-widget-tool">

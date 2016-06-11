@@ -18,7 +18,7 @@ module.exports = function() {
             websites:
             {
                 type: Array,
-                "default": []
+                "default": [{type: mongoose.Schema.Types.ObjectId, ref: 'Website'}]
             },
             dateCreated:
             {

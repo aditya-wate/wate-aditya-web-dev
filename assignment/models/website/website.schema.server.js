@@ -13,7 +13,7 @@ module.exports = function() {
             pages:
             {
                 type: Array,
-                "default": []
+                "default": [{type: mongoose.Schema.Types.ObjectId, ref: 'Page'}]
             },
             dateCreated:
             {type: Date,

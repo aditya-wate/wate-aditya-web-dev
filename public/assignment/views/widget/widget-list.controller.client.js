@@ -8,6 +8,7 @@
         vm.userId = $routeParams.userId;
         vm.websiteId = $routeParams.websiteId;
         vm.pageId = $routeParams.pageId;
+        vm.reorderWidget = reorderWidget;
         vm.getSafeHtml = getSafeHtml;
         vm.getSafeUrl = getSafeUrl;
 
@@ -21,10 +22,18 @@
                     function (error) {
                         vm.error = "Unable to find widgets for page:"+ vm.pageId;
                     });
-            $(".container")
-                .sortable({axis: "y"});
+            // $(".container")
+            //     .sortable({axis: "y"});
         }
         init();
+
+        function reorderWidget(start,end){
+            console.log("reorderWidget");
+
+            WidgetService
+                .reorderWidget(vm.pageId, start, end)
+                .then(init);
+        }
 
         function getSafeHtml(widget) {
             return $sce.trustAsHtml(widget.text);

@@ -11,6 +11,7 @@ module.exports = function(app, models) {
     app.put("/api/widget/:widgetId", updateWidget);
     app.delete("/api/widget/:widgetId", deleteWidget);
     app.post ("/api/upload", upload.single('myFile'), uploadImage);
+    app.put("/page/:pageId/widget", updateWidgetOrder);
 
     function createWidget(req, res){
         var pageId = req.params.pageId;
@@ -129,5 +130,31 @@ module.exports = function(app, models) {
         } else{
             res.redirect("/assignment/#/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+widgetId);
         }
+    }
+    
+    function updateWidgetOrder(req,res) {
+        var pageId = req.params.pageId;
+        var start = parseInt(req.query.start);
+        var end = parseInt(req.query.end);
+        console.log("pageId:"+pageId+" start:"+start+" end:"+end);
+
+        // return Todo.find(function(err, todos){
+        //     todos.forEach(function(todo){
+        //         console.log(todo);
+        //         if(start < end) {
+        //             if(todo.order === start) {
+        //                 todo.order = end;
+        //                 todo.save();
+        //             } else if(todo.order > start && todo.order <= end) {
+        //                 todo.order--;
+        //                 todo.save();
+        //             }
+        //         } else {
+        //
+        //         }
+        //     })
+        // })
+        //
+        res.send(200);
     }
 };
