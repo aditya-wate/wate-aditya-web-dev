@@ -11,7 +11,6 @@
                 .sortable({
                     axis: 'y',
                     start: function(event, ui) {
-                        console.log("directove");
                         start = ui.item.index();
                     },
                     stop: function(event, ui) {
