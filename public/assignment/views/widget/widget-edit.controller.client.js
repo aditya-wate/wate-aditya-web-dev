@@ -22,6 +22,7 @@
         init();
 
         function updateWidget(widgetId, widget) {
+            if(widget.name)
             WidgetService
                 .updateWidget(widgetId, widget)
                 .then(
@@ -31,6 +32,8 @@
                     function (error) {
                         vm.error = "Unable to update widget";
                     });
+            else
+                vm.error = "Widget name required";
         }
 
         function deleteWidget(widgetId) {
