@@ -1,6 +1,7 @@
 module.exports = function(app, models) {
 
     var widgetModel = models.widgetModel;
+    var pageModel = models.pageModel;
 
     var multer = require('multer');
     var upload = multer({ dest: __dirname+'/../../public/uploads' });
@@ -21,6 +22,17 @@ module.exports = function(app, models) {
             .createWidget(pageId, widget)
             .then(
                 function(widget) {
+                    pageModel
+                        .findPageById(pageId)
+                        .update({$pushAll: {widgets: [widget._id]}})
+                        .then(
+                            function(stat) {
+                                console.log("WidgetService: {pageUpdateStatus:"+JSON.stringify(stat)+"}");
+                            },
+                            function(error) {
+                                console.log("WidgetService: {pageUpdateStatus:"+JSON.stringify(error)+"}");
+                            }
+                        );
                     res.json(widget);
                 },
                 function(error) {

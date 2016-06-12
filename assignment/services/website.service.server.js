@@ -27,10 +27,10 @@ module.exports = function(app, models) {
                         .update({$pushAll: {websites: [website._id]}})
                         .then(
                             function(stat) {
-                                console.log("WebsiteModel: {userUpdateStatus:"+stat+"}");
+                                console.log("WebsiteService: {userUpdateStatus:"+JSON.stringify(stat)+"}");
                             },
                             function(error) {
-                                console.log("WebsiteModel: {userUpdateStatus:"+error+"}");
+                                console.log("WebsiteService: {userUpdateStatus:"+JSON.stringify(error)+"}");
                             }
                         );
                     res.json(website);

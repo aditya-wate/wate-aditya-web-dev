@@ -11,11 +11,7 @@ module.exports = function() {
             name: String,
             title: String,
             description: String,
-            widgets:
-            {
-                type: Array,
-                "default": [{type: mongoose.Schema.Types.ObjectId, ref: 'Widget'}]
-            },
+            widgets:[{type: mongoose.Schema.Types.ObjectId, ref: 'Widget'}],
             dateCreated:
             {
                 type: Date,

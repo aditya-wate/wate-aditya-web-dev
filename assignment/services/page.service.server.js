@@ -1,6 +1,7 @@
 module.exports = function(app, models) {
 
     var pageModel = models.pageModel;
+    var websiteModel = models.websiteModel;
 
     app.post("/api/website/:websiteId/page", createPage);
     app.get("/api/website/:websiteId/page", findAllPagesForWebsite);
@@ -22,6 +23,17 @@ module.exports = function(app, models) {
             .createPage(websiteId, newPage)
             .then(
                 function(page) {
+                    websiteModel
+                        .findWebsiteById(websiteId)
+                        .update({$pushAll: {pages: [page._id]}})
+                        .then(
+                            function(stat) {
+                                console.log("PageService: {websiteUpdateStatus:"+JSON.stringify(stat)+"}");
+                            },
+                            function(error) {
+                                console.log("PageService: {websiteUpdateStatus:"+JSON.stringify(error)+"}");
+                            }
+                        );
                     res.json(page);
                 },
                 function(error) {

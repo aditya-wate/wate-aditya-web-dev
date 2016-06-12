@@ -10,11 +10,7 @@ module.exports = function() {
             },
             name: String,
             description: String,
-            pages:
-            {
-                type: Array,
-                "default": [{type: mongoose.Schema.Types.ObjectId, ref: 'Page'}]
-            },
+            pages:[{type: mongoose.Schema.Types.ObjectId, ref: 'Page'}],
             dateCreated:
             {type: Date,
                 default: Date.now
