@@ -20,8 +20,16 @@
                             vm.error = "User not found";
                         }
                     });
-            else
-                vm.error = "username & password are mandatory fields";;
+            else{
+                if(!username && password)
+                    vm.error = "Please enter username";
+                else
+                if(!password && username)
+                    vm.error = "Please enter password";
+                else
+                    vm.error = "Please enter username and password";
+            }
+
         }
     }
 })();
