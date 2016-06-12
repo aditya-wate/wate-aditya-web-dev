@@ -62,7 +62,51 @@ module.exports = function() {
     }
 
     function reorderWidget(pageId, start, end) {
-        //TODO
+        return Widget
+            .find({"_page": pageId})
+            .then(
+                function(widgets){
+                    console.log(widgets);
+                    widgets.forEach(
+                        function(widget) {
+                            if(start < end)
+                            {
+                                if(widget.order < start);       //these widgets would be unchanged
+                                else if(widget.order === start)
+                                {
+                                    widget.order = end;
+                                    widget.save(function(){});
+                                }
+                                else if((widget.order > start) && (widget.order <= end))
+                                {
+                                    widget.order--;
+                                    widget.save(function(){});
+                                }
+                                else if(widget.order > end);    //these widgets would be unchanged
+                            }
+                            else{
+
+                                    if(widget.order < end);       //these widgets would be unchanged
+                                    else if(widget.order === start)
+                                    {
+                                        widget.order = end;
+                                        widget.save(function(){});
+                                    }
+                                    else if((widget.order >= end) && (widget.order < start))
+                                    {
+                                        widget.order++;
+                                        widget.save(function(){});
+                                    }
+                                    else if(widget.order > start);    //these widgets would be unchanged
+                            }
+                        }
+
+                    )
+                },
+                function (error) {
+                    return null;
+                }
+            );
     }
 
 

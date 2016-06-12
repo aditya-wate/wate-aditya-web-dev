@@ -148,26 +148,20 @@ module.exports = function(app, models) {
         var pageId = req.params.pageId;
         var start = parseInt(req.query.start);
         var end = parseInt(req.query.end);
-        //TODO: remove the below
-        console.log("pageId:"+pageId+" start:"+start+" end:"+end);
-
-        // return Todo.find(function(err, todos){
-        //     todos.forEach(function(todo){
-        //         console.log(todo);
-        //         if(start < end) {
-        //             if(todo.order === start) {
-        //                 todo.order = end;
-        //                 todo.save();
-        //             } else if(todo.order > start && todo.order <= end) {
-        //                 todo.order--;
-        //                 todo.save();
-        //             }
-        //         } else {
-        //
-        //         }
-        //     })
-        // })
-        //
+        console.log(start);
+        console.log(end);
+        if (Number.isInteger(start) && Number.isInteger(end)) {
+            widgetModel
+                .reorderWidget(pageId, start, end)
+                .then(
+                    function (stat) {
+                        return res.json(200);
+                    },
+                    function (err) {
+                        res.status(400).send(err);
+                    }
+                );
+        }
         res.send(200);
     }
 };
