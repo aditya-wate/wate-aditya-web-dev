@@ -5,18 +5,23 @@
 
     function LoginController($location, UserService) {
         var vm = this;
+        vm.login = login;
 
-        vm.login = function(username, password) {
-            UserService
-                .findUserByCredentials(username, password)
-                .then(function(response){
-                    var user = response.data;
-                    if(user._id) {
-                        $location.url("/user/" + user._id);
-                    } else {
-                        vm.error = "User not found";
-                    }
-                });
+
+        function login(username, password) {
+            if(username && password)
+                UserService
+                    .findUserByCredentials(username, password)
+                    .then(function(response){
+                        var user = response.data;
+                        if(user) {
+                            $location.url("/user/" + user._id);
+                        } else {
+                            vm.error = "User not found";
+                        }
+                    });
+            else
+                vm.error = "username & password are mandatory fields";;
         }
     }
 })();
