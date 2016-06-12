@@ -22,6 +22,17 @@ module.exports = function(app, models) {
             .createWebsiteForUser(userId, newWebsite)
             .then(
                 function(website) {
+                    userModel
+                        .findUserById(userId)
+                        .update({$pushAll: {websites: [website._id]}})
+                        .then(
+                            function(stat) {
+                                console.log("WebsiteModel: {userUpdateStatus:"+stat+"}");
+                            },
+                            function(error) {
+                                console.log("WebsiteModel: {userUpdateStatus:"+error+"}");
+                            }
+                        );
                     res.json(website);
                 },
                 function(error) {
