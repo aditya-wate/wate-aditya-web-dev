@@ -30,7 +30,8 @@ module.exports = function() {
             {
                 type: Date,
                 default: Date.now
-            }
+            },
+            order: Number
         },
         {collection: "assignment.widget"}
     );

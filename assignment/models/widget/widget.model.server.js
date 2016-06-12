@@ -15,8 +15,20 @@ module.exports = function() {
     };
     return api;
 
-    function createWidget(pageId, widget) {
-        return Widget.create(widget);
+    function createWidget(pageId, widget)
+    {
+        widget._page = pageId;
+        return Widget
+            .find({_page: pageId})
+            .then(
+                function (widgets) {
+                    widget.order = widgets.length;
+                    return Widget.create(widget);
+                },
+                function (error) {
+                    return null;
+                }
+            );
     }
 
     function findAllWidgetsForPage(pageId) {
@@ -48,7 +60,7 @@ module.exports = function() {
                 }
             );
     }
-    
+
     function reorderWidget(pageId, start, end) {
         //TODO
     }
