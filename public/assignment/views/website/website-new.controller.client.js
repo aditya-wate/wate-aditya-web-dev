@@ -23,7 +23,7 @@
                             vm.error = "Unable to create website";
                         });
             else
-                vm.error = "Website name is required";
+                vm.error = "Website name required";
         }
     }
 })();

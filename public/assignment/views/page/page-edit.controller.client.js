@@ -21,6 +21,7 @@
         init();
 
         function updatePage(pageId, page) {
+            if(page.name)
             PageService
                 .updatePage(pageId, page)
                 .then(
@@ -30,6 +31,8 @@
                     function (error) {
                         vm.error = "Unable to update page";
                     });
+            else
+                vm.error = "Page name required";
         }
 
         function deletePage(pageId) {

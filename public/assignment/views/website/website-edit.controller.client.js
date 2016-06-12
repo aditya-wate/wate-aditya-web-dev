@@ -30,7 +30,7 @@
                             vm.error = "Unable to update website";
                         });
             else
-                vm.error = "Website name is required";
+                vm.error = "Website name required";
         }
 
         function deleteWebsite(websiteId) {
