@@ -66,7 +66,6 @@ module.exports = function() {
             .find({"_page": pageId})
             .then(
                 function(widgets){
-                    console.log(widgets);
                     widgets.forEach(
                         function(widget) {
                             if(start < end)
