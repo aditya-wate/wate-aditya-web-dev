@@ -150,7 +150,7 @@ module.exports = function(app, models) {
         var end = parseInt(req.query.end);
         console.log(start);
         console.log(end);
-        if (Number.isInteger(start) && Number.isInteger(end)) {
+        if (start!=null && end!=null) {
             widgetModel
                 .reorderWidget(pageId, start, end)
                 .then(
