@@ -9,19 +9,21 @@
         vm.createWebsite = createWebsite;
 
         function createWebsite(name, description) {
-            WebsiteService
-                .createWebsite(vm.userId, name, description)
-                .then(
-                    function (response) {
-                        var newWebsite = response.data;
-                        if (newWebsite._id) {
-                            $location.url("/user/" +vm.userId+"/website");
-                        }
-                    },
-                    function (error) {
-                        vm.error = "Unable to create website";
-                    });
-
+            if(name)
+                WebsiteService
+                    .createWebsite(vm.userId, name, description)
+                    .then(
+                        function (response) {
+                            var newWebsite = response.data;
+                            if (newWebsite._id) {
+                                $location.url("/user/" +vm.userId+"/website");
+                            }
+                        },
+                        function (error) {
+                            vm.error = "Unable to create website";
+                        });
+            else
+                vm.error = "Website name is required";
         }
     }
 })();

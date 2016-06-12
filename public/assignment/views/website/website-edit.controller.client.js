@@ -20,14 +20,17 @@
         init();
 
         function updateWebsite(websiteId, website) {
-            WebsiteService
-                .updateWebsite(websiteId, website)
-                .then(function (response) {
-                        $location.url("/user/"+vm.userId+"/website");
-                    },
-                    function (error) {
-                        vm.error = "Unable to update website";
-                    });
+            if(website.name)
+                WebsiteService
+                    .updateWebsite(websiteId, website)
+                    .then(function (response) {
+                            $location.url("/user/"+vm.userId+"/website");
+                        },
+                        function (error) {
+                            vm.error = "Unable to update website";
+                        });
+            else
+                vm.error = "Website name is required";
         }
 
         function deleteWebsite(websiteId) {
