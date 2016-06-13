@@ -42,3 +42,10 @@ p.navbar-text.pull-left {
     width: 100%;
     height: 100%;
 }
+
+span.err { color: #f00; }
+
+input.submitted
+{
+    border:1px solid #f00;
+}

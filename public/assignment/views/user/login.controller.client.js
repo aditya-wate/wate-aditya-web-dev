@@ -7,9 +7,9 @@
         var vm = this;
         vm.login = login;
 
-
         function login(username, password) {
-            if(username && password)
+            // if(username && password)
+            if (username && password) {
                 UserService
                     .findUserByCredentials(username, password)
                     .then(function(response){
@@ -20,14 +20,26 @@
                             vm.error = "User not found";
                         }
                     });
+                vm.invalidUsername = false;
+                vm.invalidPassword = false;
+            }
+
             else{
-                if(!username && password)
+                if(!username && password){
                     vm.error = "Please enter username";
-                else
-                if(!password && username)
+                    vm.invalidUsername = true;
+                    vm.invalidPassword = false;
+                }
+                else if(!password && username) {
                     vm.error = "Please enter password";
-                else
+                    vm.invalidPassword = true;
+                    vm.invalidUsername = false;
+                }
+                else {
                     vm.error = "Please enter username and password";
+                    vm.invalidUsername = true;
+                    vm.invalidPassword = true;
+                }
             }
 
         }
