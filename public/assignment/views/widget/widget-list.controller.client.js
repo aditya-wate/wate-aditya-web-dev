@@ -28,8 +28,6 @@
         init();
 
         function reorderWidget(start,end){
-            console.log("reorderWidget");
-
             WidgetService
                 .reorderWidget(vm.pageId, start, end)
                 .then(init);
