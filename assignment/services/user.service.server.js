@@ -6,6 +6,7 @@ module.exports = function(app, models) {
     var userModel = models.userModel;
 
     app.post  ('/api/login', passport.authenticate('wam'), login);
+    app.post('/api/logout', logout);
     app.post("/api/user", createUser);
     app.get("/api/user", getUsers);
     app.get("/api/user/:userId", findUserById);
@@ -53,6 +54,11 @@ module.exports = function(app, models) {
     function login(req, res) {
         var user = req.user;
         res.json(user);
+    }
+
+    function logout(req, res) {
+        req.logOut();
+        res.send(200);
     }
     
     function deleteUser(req, res) {
