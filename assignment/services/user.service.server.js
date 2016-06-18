@@ -1,4 +1,5 @@
 var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy;
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require("bcrypt-nodejs");
 
@@ -7,6 +8,7 @@ module.exports = function(app, models) {
     var userModel = models.userModel;
 
     app.post  ('/api/login', passport.authenticate('wam'), login);
+    app.get ('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
     app.post('/api/logout', logout);
     app.get ('/api/loggedin', loggedin);
     app.post("/api/user", createUser);
@@ -15,10 +17,23 @@ module.exports = function(app, models) {
     app.put("/api/user/:userId", updateUser);
     app.delete("/api/user/:userId", deleteUser);
     app.post ('/api/register', register);
+    app.get('/auth/facebook/callback',
+        passport.authenticate('facebook', {
+            successRedirect: '/assignment/#/user',
+            failureRedirect: '/assignment/#/login'
+        }));
 
     passport.serializeUser(serializeUser);
     passport.deserializeUser(deserializeUser);
     passport.use('wam',new LocalStrategy(localStrategy));
+
+    var facebookConfig = {
+        clientID     : process.env.FACEBOOK_CLIENT_ID,
+        clientSecret : process.env.FACEBOOK_CLIENT_SECRET,
+        callbackURL  : process.env.FACEBOOK_CALLBACK_URL
+    }
+
+    passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
 
     function localStrategy(username, password, done) {
         userModel
@@ -36,6 +51,41 @@ module.exports = function(app, models) {
                     {
                         return done(err);
                     }
+                }
+            );
+    }
+
+    function facebookStrategy(token, refreshToken, profile, done) {
+        console.log(profile);
+        userModel
+            .findUserByFacebookId(profile.id)
+            .then(
+                function(facebookUser) {
+                    if(facebookUser) {
+                        return done(null, facebookUser);
+                    } else {
+                        facebookUser = {
+                            username: profile.displayName.replace(/ /g,''),
+                            facebook: {
+                                token: token,
+                                id: profile.id,
+                                displayName: profile.displayName
+                            }
+                        };
+                        userModel
+                            .createUser(facebookUser)
+                            .then(
+                                function(user) {
+                                    done(null, user);
+                                },
+                                function (error) {
+                                    return done(error);
+                                }
+                            );
+                    }
+                },
+                function (error) {
+                    return done(error);
                 }
             );
     }
