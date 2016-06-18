@@ -12,6 +12,7 @@ module.exports = function(app, models) {
     app.get("/api/user/:userId", findUserById);
     app.put("/api/user/:userId", updateUser);
     app.delete("/api/user/:userId", deleteUser);
+    app.post ('/api/register', register);
 
     passport.serializeUser(serializeUser);
     passport.deserializeUser(deserializeUser);
@@ -60,7 +61,26 @@ module.exports = function(app, models) {
         req.logOut();
         res.send(200);
     }
-    
+
+    function register (req, res) {
+        var user = req.body;
+        userModel
+            .createUser(user)
+            .then(
+                function(user){
+                    if(user){
+                        req.login(user, function(err) {
+                            if(err) {
+                                res.status(400).send(err);
+                            } else {
+                                res.json(user);
+                            }
+                        });
+                    }
+                }
+            );
+    }
+
     function deleteUser(req, res) {
         var id = req.params.userId;
 

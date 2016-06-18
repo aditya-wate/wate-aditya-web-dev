@@ -12,7 +12,8 @@
             findUserByCredentials: findUserByCredentials,
             findUserById: findUserById,
             updateUser: updateUser,
-            deleteUser: deleteUser
+            deleteUser: deleteUser,
+            register: register
         };
         return api;
 
@@ -24,6 +25,10 @@
             return $http.post("/api/logout");
         }
 
+        function register(user) {
+            return $http.post("/api/register", user);
+        }
+        
         function createUser(newUser) {
             var user = {
                 username: newUser.username,
