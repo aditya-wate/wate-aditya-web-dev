@@ -26,7 +26,11 @@
     <div ng-if="model.error" class="alert alert-danger">
         {{model.error}}
     </div>
-    <form>
+    <div class="alert alert-danger"
+         ng-show="model.editPageForm.$invalid && model.editPageForm.$submitted">
+        There are errors in the form
+    </div>
+    <form name="model.editPageForm" novalidate>
         <div class="form-group">
             <label for="page-name">Page Name</label>
             <input ng-model="model.page.name"
@@ -34,7 +38,15 @@
                    class="form-control"
                    id="page-name"
                    value="Blog Post"
-                   placeholder="Home_Page">
+                   placeholder="Home Page"
+                   name="name"
+                   required
+                   ng-class="{submitted:model.editPageForm.name.$invalid && model.editPageForm.$submitted}">
+            <span ng-show="model.editPageForm.$submitted && model.editPageForm.name.$invalid"
+                  ng-class="{submitted:model.editPageForm.name.$invalid && model.editPageForm.$submitted}">
+            <span class="fa fa-exclamation-triangle"></span>
+                Please enter Page Name
+        </span>
         </div>
         <div class="form-group">
             <label for="page-title">Page Title</label>

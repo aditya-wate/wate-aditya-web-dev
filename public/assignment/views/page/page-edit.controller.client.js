@@ -21,6 +21,7 @@
         init();
 
         function updatePage(pageId, page) {
+            vm.editPageForm.$submitted=true;
             if(page.name)
             PageService
                 .updatePage(pageId, page)
@@ -31,8 +32,6 @@
                     function (error) {
                         vm.error = "Unable to update page";
                     });
-            else
-                vm.error = "Page name required";
         }
 
         function deletePage(pageId) {
