@@ -26,7 +26,11 @@
     <div ng-if="model.error" class="alert alert-danger">
         {{model.error}}
     </div>
-    <form>
+    <div class="alert alert-danger"
+         ng-show="model.editWebsiteForm.$invalid && model.editWebsiteForm.$submitted">
+        There are errors in the form
+    </div>
+    <form name="model.editWebsiteForm" novalidate>
         <div class="form-group">
             <label for="website-name">Website Name</label>
             <input ng-model="model.website.name"
@@ -34,8 +38,15 @@
                    class="form-control"
                    id="website-name"
                    value="Apple"
-                   placeholder="Google">
+                   placeholder="Google"
+                   name="name"
+                   required
+                   ng-class="{submitted:model.editWebsiteForm.name.$invalid && model.editWebsiteForm.$submitted}">
         </div>
+        <span ng-show="model.editWebsiteForm.$submitted && model.editWebsiteForm.name.$invalid"
+              ng-class="{submitted:model.editWebsiteForm.name.$invalid && model.editWebsiteForm.$submitted}">
+            <span class="fa fa-exclamation-triangle"></span>Please enter Website name
+        </span>
         <div class="form-group">
             <label for="website-description">Website Description</label>
                 <textarea ng-model="model.website.description"

@@ -20,6 +20,7 @@
         init();
 
         function updateWebsite(websiteId, website) {
+            vm.editWebsiteForm.$submitted=true;
             if(website.name)
                 WebsiteService
                     .updateWebsite(websiteId, website)
@@ -29,8 +30,6 @@
                         function (error) {
                             vm.error = "Unable to update website";
                         });
-            else
-                vm.error = "Website name required";
         }
 
         function deleteWebsite(websiteId) {
