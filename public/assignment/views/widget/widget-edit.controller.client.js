@@ -22,6 +22,7 @@
         init();
 
         function updateWidget(widgetId, widget) {
+            vm.editWidgetForm.$submitted=true;
             if(widget.name)
             WidgetService
                 .updateWidget(widgetId, widget)
@@ -32,8 +33,6 @@
                     function (error) {
                         vm.error = "Unable to update widget";
                     });
-            else
-                vm.error = "Widget name required";
         }
 
         function deleteWidget(widgetId) {
