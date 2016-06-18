@@ -23,15 +23,27 @@
     <div ng-if="model.error" class="alert alert-danger">
         {{model.error}}
     </div>
-    <form>
+    <div class="alert alert-danger"
+         ng-show="model.newPageForm.$invalid && model.newPageForm.$submitted">
+        There are errors in the form
+    </div>
+    <form name="model.newPageForm" novalidate>
         <div class="form-group">
             <label for="page-name">Name</label>
             <input ng-model="model.page.name"
                    type="text"
                    class="form-control"
                    id="page-name"
-                   placeholder="Page Name">
+                   placeholder="Page Name"
+                   name="name"
+                   required
+                   ng-class="{submitted:model.newPageForm.name.$invalid && model.newPageForm.$submitted}">
+            <span ng-show="model.newPageForm.$submitted && model.newPageForm.name.$invalid"
+                  ng-class="{submitted:model.newPageForm.name.$invalid && model.newPageForm.$submitted}">
+            <span class="fa fa-exclamation-triangle"></span>Please enter Page Name
+        </span>
         </div>
+
         <div class="form-group">
             <label for="page-title">Title</label>
             <input ng-model="model.page.title"

@@ -10,6 +10,7 @@
         vm.createPage = createPage;
 
         function createPage(page) {
+            vm.newPageForm.$submitted=true;
             if(page.name)
                 PageService
                     .createPage(vm.websiteId, page)
@@ -22,8 +23,6 @@
                         function (error) {
                             vm.error = "Unable to create page";
                         });
-            else
-                vm.error = "Page name required";
         }
     }
 })();
