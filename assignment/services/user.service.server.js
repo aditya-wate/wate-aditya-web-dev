@@ -7,6 +7,7 @@ module.exports = function(app, models) {
 
     app.post  ('/api/login', passport.authenticate('wam'), login);
     app.post('/api/logout', logout);
+    app.get ('/api/loggedin', loggedin);
     app.post("/api/user", createUser);
     app.get("/api/user", getUsers);
     app.get("/api/user/:userId", findUserById);
@@ -126,6 +127,10 @@ module.exports = function(app, models) {
                 }
             );
 
+    }
+
+    function loggedin(req, res) {
+        res.send(req.isAuthenticated() ? req.user : '0');
     }
 
     function findUserById(req, res) {
