@@ -9,12 +9,14 @@
         vm.register = register;
 
         function register(newUser){
+            if(newUser)
+                if(newUser.username && newUser.password && newUser.repassword)
                 UserService
                     .findUserByUsername(newUser.username)
                     .then(function (response) {
                         var user = response.data;
                         if (user) {
-                            vm.error = "User already exists by this Username";
+                            vm.error = "User already exists";
                         } else if (newUser.password != newUser.repassword) {
                             vm.error = "Password Mismatch";
                         }
@@ -42,7 +44,7 @@
                         .then(function (response) {
                             var user = response.data;
                             if (user){
-                                vm.error = "User already exists by this Username";
+                                vm.error = "User already exists";
                             } else if(newUser.password != newUser.repassword) {
                                 vm.error = "Password Mismatch";
                             }

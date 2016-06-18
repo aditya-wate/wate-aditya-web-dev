@@ -3,23 +3,43 @@
     <div ng-if="model.error" class="alert alert-danger">
         {{model.error}}
     </div>
-
+    <div class="alert alert-danger"
+         ng-show="registerForm.$invalid && registerForm.$submitted">
+        There are errors in the form
+    </div>
     <h1>Register</h1>
-
-    <input ng-model="model.user.username"
-           type="text"
-           class="form-control"
-           placeholder="username"/>
-    <input ng-model="model.user.password"
-           type="password"
-           class="form-control"
-           placeholder="password"/>
-    <input ng-model="model.user.repassword"
-           type="password"
-           class="form-control"
-           placeholder="verify password"/>
-    <a ng-click="model.register(model.user)"
-       class="btn btn-primary btn-block">Register</a>
-    <a class="btn btn-danger  btn-block"
-       href="#/login">Cancel</a>
+    <form name="registerForm" novalidate>
+        <input ng-model="model.user.username"
+               type="text"
+               class="form-control"
+               placeholder="username"
+               required
+               name="username"/>
+        <span ng-show="registerForm.$submitted && registerForm.username.$invalid">
+            <span class="fa fa-exclamation-triangle"></span>Please enter username
+        </span>
+        <input ng-model="model.user.password"
+               type="password"
+               class="form-control"
+               placeholder="password"
+               required
+               name="password"/>
+        <span ng-show="registerForm.$submitted && registerForm.password.$invalid">
+            <span class="fa fa-exclamation-triangle"></span>Please enter password
+        </span>
+        <input ng-model="model.user.repassword"
+               type="password"
+               class="form-control"
+               placeholder="verify password"
+               required
+               name="repassword"/>
+        <span ng-show="registerForm.$submitted && registerForm.repassword.$invalid">
+            <span class="fa fa-exclamation-triangle"></span>Please verify password
+        </span>
+        <button type="submit"
+                ng-click="model.register(model.user)"
+                class="btn btn-primary btn-block">Register</button>
+        <a class="btn btn-danger  btn-block"
+           href="#/login">Cancel</a>
+    </form>
 </div>
