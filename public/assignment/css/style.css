@@ -44,7 +44,7 @@ p.navbar-text.pull-left {
 }
 
 form.ng-submitted input.ng-invalid{
-    border: solid #ebccd1;
+    border: solid #a94442;
 }
 
 form.ng-invalid.ng-submitted span{
