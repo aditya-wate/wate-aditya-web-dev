@@ -5,24 +5,22 @@
     </div>
 
     <h1>Login</h1>
-    <input ng-model="username"
+    <input ng-model="user.username"
            type="text"
            class="form-control"
            placeholder="username"
            autocorrect="off"
-           autocapitalize="off"
-           ng-class="{submitted:model.invalidUsername}"/>
-    <span ng-show="model.invalidUsername" class="err">
-            This field is required.</span>
+           autocapitalize="off"/>
+    <!--span ng-show="model.invalidUsername" class="err">
+            This field is required.</span-->
 
-    <input ng-model="password"
+    <input ng-model="user.password"
            type="password"
            class="form-control"
-           placeholder="password"
-           ng-class="{submitted:model.invalidPassword}"/>
-    <span ng-show="model.invalidPassword" class="err">
-            This field is required.</span>
-    <a ng-click="model.login(username, password)"
+           placeholder="password"/>
+    <!--span ng-show="model.invalidPassword" class="err">
+            This field is required.</span-->
+    <a ng-click="model.login(user)"
        class="btn btn-primary btn-block">Login</a>
     <a class="btn btn-success btn-block"
        href="#/register">Register</a>
