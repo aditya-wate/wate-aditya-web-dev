@@ -1,5 +1,6 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var bcrypt = require("bcrypt-nodejs");
 
 module.exports = function(app, models) {
 
@@ -21,17 +22,20 @@ module.exports = function(app, models) {
 
     function localStrategy(username, password, done) {
         userModel
-            .findUserByCredentials(username, password)
+            .findUserByUsername(username)
             .then(
-                function(user) {
-                    if(user.username === username && user.password === password) {
-                        return done(null, user);
+                function (user) {
+                    if(user && bcrypt.compareSync(password, user.password)) {
+                        done(null, user);
                     } else {
-                        return done(null, false);
+                        done(null, false);
                     }
                 },
                 function(err) {
-                    if (err) { return done(err); }
+                    if (err)
+                    {
+                        return done(err);
+                    }
                 }
             );
     }
@@ -65,6 +69,7 @@ module.exports = function(app, models) {
 
     function register (req, res) {
         var user = req.body;
+        user.password = bcrypt.hashSync(user.password);
         userModel
             .createUser(user)
             .then(
