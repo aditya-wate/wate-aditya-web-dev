@@ -43,9 +43,11 @@ p.navbar-text.pull-left {
     height: 100%;
 }
 
-span.err { color: #f00; }
+form.ng-submitted input.ng-invalid{
+    border: solid #ebccd1;
+}
 
-input.submitted
-{
-    border:1px solid #f00;
+form.ng-invalid.ng-submitted span{
+    color: #a94442;
+    margin-bottom: 5px;
 }

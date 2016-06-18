@@ -1,27 +1,40 @@
 <div class="container">
 
-    <div ng-if="model.error" class="alert alert-danger">
+    <div ng-if="model.error"
+         class="alert alert-danger">
         {{model.error}}
+    </div>
+    <div class="alert alert-danger"
+         ng-show="loginForm.$invalid && loginForm.$submitted">
+        There are errors in the form
     </div>
 
     <h1>Login</h1>
-    <input ng-model="user.username"
-           type="text"
-           class="form-control"
-           placeholder="username"
-           autocorrect="off"
-           autocapitalize="off"/>
-    <!--span ng-show="model.invalidUsername" class="err">
-            This field is required.</span-->
-
-    <input ng-model="user.password"
-           type="password"
-           class="form-control"
-           placeholder="password"/>
-    <!--span ng-show="model.invalidPassword" class="err">
-            This field is required.</span-->
-    <a ng-click="model.login(user)"
-       class="btn btn-primary btn-block">Login</a>
-    <a class="btn btn-success btn-block"
-       href="#/register">Register</a>
+    <form name="loginForm" novalidate>
+        <input ng-model="user.username"
+               type="text"
+               name="username"
+               class="form-control"
+               placeholder="username"
+               autocorrect="off"
+               autocapitalize="off"
+               required/>
+        <span ng-show="loginForm.$submitted && loginForm.username.$invalid">
+            <span class="fa fa-exclamation-triangle"></span>Please enter username
+        </span>
+        <input ng-model="user.password"
+               type="password"
+               name="password"
+               class="form-control"
+               placeholder="password"
+               required/>
+        <span ng-show="loginForm.$submitted && loginForm.password.$invalid">
+            <span class="fa fa-exclamation-triangle"></span>Please enter password
+        </span>
+        <button type="submit"
+                ng-click="model.login(user)"
+                class="btn btn-primary btn-block">Login</button>
+        <a class="btn btn-success btn-block"
+           href="#/register">Register</a>
+    </form>
 </div>
