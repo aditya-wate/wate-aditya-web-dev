@@ -9,6 +9,7 @@
         vm.createWebsite = createWebsite;
 
         function createWebsite(name, description) {
+            vm.newWebsiteForm.$submitted=true;
             if(name)
                 WebsiteService
                     .createWebsite(vm.userId, name, description)
@@ -22,8 +23,6 @@
                         function (error) {
                             vm.error = "Unable to create website";
                         });
-            else
-                vm.error = "Website name required";
         }
     }
 })();

@@ -51,3 +51,12 @@ form.ng-invalid.ng-submitted span{
     color: #a94442;
     margin-bottom: 5px;
 }
+
+span.submitted {
+    color: #a94442;
+    margin-bottom: 5px;
+}
+
+input.submitted{
+    border: solid #a94442;
+}
