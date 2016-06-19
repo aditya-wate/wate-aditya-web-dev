@@ -4,7 +4,11 @@ module.exports = function() {
 
     var UserSchema = mongoose.Schema(
         {
-            username:String,
+            username:
+            {
+                type: String,
+                required: true
+            },
             password: String,
             firstName: String,
             lastName: String,
