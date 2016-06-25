@@ -1,58 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="viewport" content="initial-scale=1.25, user-scalable = no">
-    <title>Aditya Wate</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="page-header">
-    <h2>Aditya Wate</h2>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>About me</h2>
-            <div class="col-md-12 panel">
-                <div>
-                    <img id="my-pic"
-                         src="res/profile.jpg"
-                         alt="Aditya Wate"
-                         class="img-thumbnail img-responsive">
-                </div>
-                <p align="justify">I am a Graduate student at Northeastern University pursuing Master of Science degree in Computer Science. I have worked as a SOA (Service Oriented Architecture) Developer in Public Service domain for about 4 years. I interned as Security Analytics Engineer with FireEye past summer, where I did some research in building Malware detonation environment.
-                    I also interned at Intralinks as a Security Analyst. My interests include Malware Analysis, Penetration Testing, Network Security and Software Engineering.
-                    <br>
-                    <a class="btn btn-default btn-sm"
-                           href="https://www.linkedin.com/in/adityawate"
-                           role="button"
-                           target="_blank">
-                        <img src="res/In-2C-21px-R.png"
-                             alt="LinkedIn">
-                        <b>LinkedIn</b></a>
-                </p>
-            </div>
+    <title>Home | Aditya Wate</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive HTML5 Website Landing Page for Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <link rel="shortcut icon" href="favicon.png">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
 
-        </div></div>
-    <br>
-    <h2>Required links</h2>
-    <div class="list-group">
-        <a href="project/index.html"
-           class="list-group-item">Project</a>
-        <a href="assignment/index.html"
-           class="list-group-item">Assignment</a>
-        <a href="test/index.html"
-           class="list-group-item">Test MongoDB</a>
-        <a href="https://github.com/aditya-wate"
-           class="list-group-item">GitHub Repository</a>
-    </div>
-</div>
-<footer >
-    <a href='http://www.freepik.com/free-vector/hexagonal-pattern_852781.htm'>Background Designed by Freepik</a>
-</footer>
+    <!-- github calendar css -->
+    <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar.css"/>
+    <!-- github acitivity css -->
+    <link rel="stylesheet" href="assets/plugins/github-activity/src/github-activity.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- ******HEADER****** -->
+<header class="header">
+    <div class="container">
+        <img class="profile-image img-responsive pull-left img-circle" src="res/profile.jpg" alt="Aditya Wate"/>
+        <div class="profile-content pull-left">
+            <h1 class="name">Aditya Wate</h1>
+            <h2 class="desc">Computer Science Grad Student</h2>
+            <ul class="social list-inline">
+                <li><a href="https://twitter.com/aditya_wate"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://plus.google.com/u/0/102402875318749837865"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/adityawate"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/aditya-wate "><i class="fa fa-github-alt"></i></a></li>
+                <li class="last-item"><a href="https://news.ycombinator.com/"><i class="fa fa-hacker-news"></i></a></li>
+            </ul>
+        </div><!--//profile-->
+        <a class="btn btn-cta-primary pull-right" href="mailto:aditya.wate@hotmail.com" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a>
+    </div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+    <div class="row">
+        <div class="primary col-md-8 col-sm-12 col-xs-12">
+            <section class="about section">
+                <div class="section-inner">
+                    <h2 class="heading">About Me</h2>
+                    <div class="content">
+                        <p align="justify">I am a Graduate student at Northeastern University pursuing Master of Science degree in Computer Science. I have worked as a SOA (Service Oriented Architecture) Developer in Public Service domain for about 4 years. I interned as Security Analytics Engineer with FireEye past summer, where I did some research in building Malware detonation environment. I also interned at Intralinks as a Security Analyst. My interests include Research, Malware Analysis, Penetration Testing, Network Security and Software Engineering.</p>
+
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </section><!--//section-->
+
+            <section class="about section">
+                <div class="section-inner">
+                    <h2 class="heading">Required links</h2>
+                    <div class="content">
+                        <div class="list-group">
+                            <a href="project/index.html"
+                               class="list-group-item">Project</a>
+                            <a href="assignment/index.html"
+                               class="list-group-item">Assignment</a>
+                            <a href="test/index.html"
+                               class="list-group-item">Test MongoDB</a>
+                            <a href="https://github.com/aditya-wate"
+                               class="list-group-item">GitHub Repository</a>
+                        </div>
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </section><!--//section-->
+
+            <section class="latest section">
+                <div class="section-inner">
+                    <h2 class="heading">Latest Projects</h2>
+                    <div class="content">
+
+                        <div class="item featured text-center">
+                            <h3 class="title"><a href="https://github.com/aditya-wate/cross-vm-side-channel" target="_blank">Cross-VM Side Channel Attacks</a></h3>
+                            <p class="summary">Prime and Probe in Cross-VM L1-Instruction Cache</p>
+                            <div class="featured-image">
+                                <a href="https://github.com/aditya-wate/cross-vm-side-channel" target="_blank">
+                                    <img class="img-responsive project-image" src="assets/images/projects/latest.png" alt="cross-vm side channel" width="100%"/>
+                                </a>
+                                <div class="ribbon">
+                                    <div class="text">New</div>
+                                </div>
+                            </div>
+
+                            <div class="desc text-left">
+                                <p>Cloud services work on pay per use model which results in savings for the client subscribing to the service provider. To deal with this infrastructure the cloud services deploy multiple servers on one physical server as virtual machines (VM). This is where the security issue is rooted; even if the cloud service provider is trusted and a non-malicious entity, the co-located machines in the same physical infrastructure may not have good intentions. As some resources are shared among the co-located virtual machines, it leads to inference of information between them.Cloud services work on pay per use model which results in savings for the client subscribing to the service provider. To deal with this infrastructure the cloud services deploy multiple servers on one physical server as virtual machines (VM). This is where the security issue is rooted; even if the cloud service provider is trusted and a non-malicious entity, the co-located machines in the same physical infrastructure may not have good intentions. As some resources are shared among the co-located virtual machines, it leads to inference of information between them.</p>
+                            </div><!--//desc-->
+                            <a class="btn btn-cta-secondary" href="https://github.com/aditya-wate/cross-vm-side-channel" target="_blank"><i class="fa fa-thumbs-o-up"></i> Star my project</a>
+                        </div><!--//item-->
+                        <hr class="divider" />
+                        <div class="item row">
+                            <a class="col-md-4 col-sm-4 col-xs-12" href="https://github.com/aditya-wate/Memory-Improvement" target="_blank">
+                                <img class="img-responsive project-image" src="assets/images/projects/ID-10046071.jpg" alt="Memory Improve" />
+                            </a>
+                            <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <h3 class="title"><a href="https://github.com/aditya-wate/Memory-Improvement" target="_blank">Memory Improve</a></h3>
+                                <p>An interactive quiz for memory impaired patients based on their biographical information. The emotionally primed data would be fed by the patient, in case the patient is incapable of doing this himself a guardian/doctor/relative would do so. The information includes events, persons and pictures that is personal to the patient. The application also presents the patient with a puzzle of the pictures from his life events or of his family members or friends. Based on the client’s study, positive memories of his life play a vital role in improving patients' memory and keeping them from losing it gradually.</p>
+                                <p><a class="more-link" href="https://github.com/aditya-wate/Memory-Improvement" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                            </div><!--//desc-->
+                        </div><!--//item-->
+
+                        <div class="item row">
+                            <a class="col-md-4 col-sm-4 col-xs-12" href="https://github.com/aditya-wate/elf-infector" target="_blank">
+                                <img class="img-responsive project-image" src="assets/images/projects/ID-10022973.jpg" alt="Elf Infector" />
+                            </a>
+                            <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <h3 class="title"><a href="https://github.com/aditya-wate/elf-infector" target="_blank">Elf Infector</a></h3>
+                                <p>The virus copies itself into the infected files but does not change the behavior of the file, instead just prints a benign message after performing the task of the originally infected file.
+                                    This is based on the Unix.satyr virus.
+                                    Refer literature by Eric Filiol, "Computer viruses: from theory to applications" for details.</p>
+                                <p><a class="more-link" href="https://github.com/aditya-wate/elf-infector" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                            </div><!--//desc-->
+                        </div><!--//item-->
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </section><!--//section-->
+
+            <section class="experience section">
+                <div class="section-inner">
+                    <h2 class="heading">Work Experience</h2>
+                    <div class="content">
+                        <div class="item">
+                            <h3 class="title">Security Analyst Intern - <span class="place"><a href="https://www.intralinks.com/">Intralinks Holdings, Inc.</a></span> <span class="year">(Sept 2015 - Dec 2015)</span></h3>
+                            <p>Monitored IDS events for malicious events and analyzed them for incident response. Created proof of concept for security information and event management (SIEM) module. Wrote scripts to check validity of SSL certificates on entire Intralinks production environment</p>
+                        </div><!--//item-->
+                        <div class="item">
+                            <h3 class="title">Security Analytics Engineer Intern - <span class="place"><a href="https://www.fireeye.com/">FireEye, Inc.</a></span> <span class="year">(June 2015 - Aug 2015)</span></h3>
+                            <p>Configured simulated customer environment for malware analysis and gathering ground truth data. Created manuals and scripts for configuring network, logging and replaying the scenarios.Performed red-teaming and malware analysis tests on this environment.</p>
+                        </div><!--//item-->
+
+                        <div class="item">
+                            <h3 class="title">Software Engineering Analyst - <span class="place"><a href="https://www.accenture.com/us-en">Accenture Services Pvt. Ltd.</a></span> <span class="year">(Sept 2010 - May 2014)</span></h3>
+                            <p>Developed proof of concepts for new security policies for existing web services developed in TIBCO AMX SG. Researched LDAP authentication of TIBCO AMX SG web services. Worked as the subject matter expert for setting up application & execution architecture with OPA as frontend. Mentored two junior employees during NSW DEC project</p>
+                        </div><!--//item-->
+
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </section><!--//section-->
+            <section class="github section">
+                <div class="section-inner">
+                    <h2 class="heading">My GitHub</h2>
+                    <div id="github-graph" class="github-graph">
+                    </div><!--//github-graph-->
+                    <div id="ghfeed" class="ghfeed">
+                    </div><!--//ghfeed-->
+
+                </div><!--//secton-inner-->
+            </section><!--//section-->
+        </div><!--//primary-->
+        <div class="secondary col-md-4 col-sm-12 col-xs-12">
+            <aside class="info aside section">
+                <div class="section-inner">
+                    <h2 class="heading sr-only">Basic Information</h2>
+                    <div class="content">
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>Boston, MA, US</li>
+                            <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="mailto:aditya.wate@hotmail.com">aditya.wate@hotmail.com</a></li>
+                            <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="http://www.lessnegative.wordpress.com">http://lessnegative.wordpress.com</a></li>
+                        </ul>
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </aside><!--//aside-->
+
+            <aside class="skills aside section">
+                <div class="section-inner">
+                    <h2 class="heading">Skills</h2>
+                    <div class="content">
+
+                        <div class="skillset">
+
+                            <div class="item">
+                                <h3 class="level-title">Python<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true">Expert</span></h3>
+                                <div class="level-bar">
+                                    <div class="level-bar-inner" data-level="90%">
+                                    </div>
+                                </div><!--//level-bar-->
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="level-title">Service Oriented Architecture<span class="level-label">Expert</span></h3>
+                                <div class="level-bar">
+                                    <div class="level-bar-inner" data-level="95%">
+                                    </div>
+                                </div><!--//level-bar-->
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="level-title">Network Security<span class="level-label">Pro</span></h3>
+                                <div class="level-bar">
+                                    <div class="level-bar-inner" data-level="90%">
+                                    </div>
+                                </div><!--//level-bar-->
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="level-title">Javascript &amp; jQuery<span class="level-label">Pro</span></h3>
+                                <div class="level-bar">
+                                    <div class="level-bar-inner" data-level="90%">
+                                    </div>
+                                </div><!--//level-bar-->
+                            </div><!--//item-->
+
+
+
+                            <div class="item">
+                                <h3 class="level-title">HTML5 &amp; CSS3<span class="level-label">Pro</span></h3>
+                                <div class="level-bar">
+                                    <div class="level-bar-inner" data-level="90%">
+                                    </div>
+                                </div><!--//level-bar-->
+                            </div><!--//item-->
+
+                            <div class="item">
+                                <h3 class="level-title">C<span class="level-label">Pro</span></h3>
+                                <div class="level-bar">
+                                    <div class="level-bar-inner" data-level="80%">
+                                    </div>
+                                </div><!--//level-bar-->
+                            </div><!--//item-->
+                        </div>
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </aside><!--//section-->
+
+            <aside class="education aside section">
+                <div class="section-inner">
+                    <h2 class="heading">Education</h2>
+                    <div class="content">
+                        <div class="item">
+                            <h3 class="title"><i class="fa fa-graduation-cap"></i> MSc Computer Science</h3>
+                            <h4 class="university">Northeastern University <span class="year">(2014-2016)</span></h4>
+                        </div><!--//item-->
+                        <div class="item">
+                            <h3 class="title"><i class="fa fa-graduation-cap"></i> BE Computer Science</h3>
+                            <h4 class="university">Rajiv Gandhi Technical Univesity <span class="year">(2006-2010)</span></h4>
+                        </div><!--//item-->
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </aside><!--//section-->
+
+            <aside class="list music aside section">
+                <div class="section-inner">
+                    <h2 class="heading">Favourite coding music</h2>
+                    <div class="content">
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-headphones"></i> <a href="https://www.youtube.com/watch?v=Q4-XIKt-ADs">Bei Mir Bist Du Schoen</a></li>
+                            <li><i class="fa fa-headphones"></i> <a href="https://www.youtube.com/watch?v=fJ9rUzIMcZQ">Bohemian Rhapsody</a></li>
+                            <li><i class="fa fa-headphones"></i> <a href="https://www.youtube.com/watch?v=A_MjCqQoLLA">Hey Jude</a></li>
+                            <li><i class="fa fa-headphones"></i> <a href="https://www.youtube.com/watch?v=pBsQVP-Olmw">Days are forgotten</a></li>
+                        </ul>
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </aside><!--//section-->
+
+            <aside class="list conferences aside section">
+                <div class="section-inner">
+                    <h2 class="heading">Conferences</h2>
+                    <div class="content">
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-calendar"></i> <a href="http://www.meetup.com/boston-security-compliance/" target="_blank">Security Meetup</a> (Boston)</li>
+                            <li><i class="fa fa-calendar"></i> <a href="http://neu.orgsync.com/org/issaneu/">ISSA - NEU Chapter</a> (Boston)</li>
+                        </ul>
+                    </div><!--//content-->
+                </div><!--//section-inner-->
+            </aside><!--//section-->
+
+        </div><!--//secondary-->
+    </div><!--//row-->
+</div><!--//masonry-->
+
+<!-- ******FOOTER****** -->
+<footer class="footer">
+    <div class="container text-center">
+        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+        <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+        <br><small class="copyright"> Image courtesy of Graphics Mouse at <a href="http://www.freedigitalphotos.net/images/agree-terms.php?id=10022973" target="_blank"/>FreeDigitalPhotos.net</small>
+        <br><small class="copyright"> Image courtesy of digitalart at <a href="http://www.freedigitalphotos.net/images/agree-terms.php?id=10022973" target="_blank"/>FreeDigitalPhotos.net</small>
+    </div><!--//container-->
+</footer><!--//footer-->
+
+<!-- Javascript -->
+<script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
+<!-- github calendar plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
+<script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
+<!-- github activity plugin -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+<script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
+<!-- custom js -->
+<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
+
